@@ -1,0 +1,139 @@
+{
+  "missions": [
+    {
+      "id": 1, "name": "Welcome Home", "side": false, "req": 0, "giver": "Marta", "start": [0, 6],
+      "intro": ["Marta: Nico Vale. Three years away and the district hasn't forgotten you.", "Marta: Take the sedan. Meet me at the Aurora Cafe downtown. Don't scratch it."],
+      "objs": [
+        {"type": "enter_vehicle", "kind": "sedan", "spawn": [1, 6], "text": "Get in the sedan"},
+        {"type": "goto", "at": [4, 6], "vehicle": true, "time": 150, "text": "Drive to the Aurora Cafe"}
+      ],
+      "outro": ["Marta: Not bad. The Harbor Kings run the docks now. We need to know how deep they are."],
+      "reward": {"money": 300}
+    },
+    {
+      "id": 2, "name": "Old Haunts", "side": false, "req": 1, "giver": "Marta", "start": [4, 6],
+      "intro": ["Marta: Walk the old streets. Let people see you are back. Start at the beach."],
+      "objs": [
+        {"type": "goto", "at": [2, 8], "vehicle": false, "text": "Walk to the beach"},
+        {"type": "goto", "at": [5, 8], "vehicle": false, "text": "Visit the beach restaurants"},
+        {"type": "goto", "at": [8, 8], "vehicle": false, "text": "Look over the marina"}
+      ],
+      "outro": ["Marta: Word travels fast. Lio at the workshop has a pickup for you."],
+      "reward": {"money": 250, "unlock": "pickup"}
+    },
+    {
+      "id": 3, "name": "Special Delivery", "side": false, "req": 2, "giver": "Lio", "start": [0, 4],
+      "intro": ["Lio: Crate in the back, warehouse in the industrial district. Do not open it.", "Lio: And Nico, drive like a citizen."],
+      "objs": [
+        {"type": "enter_vehicle", "kind": "pickup", "spawn": [1, 4], "text": "Take the pickup"},
+        {"type": "goto", "at": [8, 2], "vehicle": true, "time": 170, "text": "Deliver the crate to the warehouse"}
+      ],
+      "outro": ["Dock Foreman: Tell Lio we are square."],
+      "reward": {"money": 400}
+    },
+    {
+      "id": 4, "name": "Dead Drop", "side": false, "req": 3, "giver": "Okoye", "start": [4, 1],
+      "intro": ["Inspector Okoye: I never met you. Two dead drops downtown. Find what the Kings hid."],
+      "objs": [
+        {"type": "goto", "at": [2, 3], "vehicle": false, "interact": true, "text": "Search the first drop (USE)"},
+        {"type": "goto", "at": [5, 5], "vehicle": false, "interact": true, "text": "Search the second drop (USE)"},
+        {"type": "talk", "at": [4, 1], "lines": ["Okoye: Shipping manifests. Dante Rossi signs them all.", "Okoye: Find where the Kings meet. Then make noise."], "text": "Report back to Okoye (USE)"}
+      ],
+      "outro": [],
+      "reward": {"money": 450}
+    },
+    {
+      "id": 5, "name": "Shake the Tail", "side": false, "req": 4, "giver": "Marta", "start": [3, 6],
+      "intro": ["Marta: Okoye's name just reached the Kings. Police are circling, someone tipped them.", "Marta: Lose them. Now."],
+      "objs": [
+        {"type": "escape", "level": 2, "text": "Lose the police"}
+      ],
+      "outro": ["Marta: Clean. Here, a present from the dealership."],
+      "reward": {"money": 500, "unlock": "sports"}
+    },
+    {
+      "id": 6, "name": "Harbor Kings", "side": false, "req": 5, "giver": "Marta", "start": [4, 6],
+      "intro": ["Marta: Four of Dante's guys are guarding the marina office. Clear them out."],
+      "objs": [
+        {"type": "goto", "at": [7, 8], "vehicle": false, "text": "Go to the marina"},
+        {"type": "kill", "at": [7, 8], "count": 4, "text": "Defeat the Harbor Kings"}
+      ],
+      "outro": ["Marta: That got his attention. Take the SUV from their lot."],
+      "reward": {"money": 600, "unlock": "suv"}
+    },
+    {
+      "id": 7, "name": "Vehicle Recovery", "side": false, "req": 6, "giver": "Lio", "start": [0, 4],
+      "intro": ["Lio: They took my sports car for a joyride. It is in the industrial lot. Bring it back to the garage."],
+      "objs": [
+        {"type": "enter_vehicle", "kind": "sports", "spawn": [8, 1], "text": "Find the stolen sports car"},
+        {"type": "goto", "at": [0, 6], "vehicle": true, "time": 160, "text": "Return it to the garage"}
+      ],
+      "outro": ["Lio: Not a scratch. Okay, a small scratch."],
+      "reward": {"money": 700, "unlock": "offroad"}
+    },
+    {
+      "id": 8, "name": "Rossi's Run", "side": false, "req": 7, "giver": "Okoye", "start": [4, 1],
+      "intro": ["Okoye: Dante's courier is on the road with the ledger. Stop him. Wreck the car, grab the book."],
+      "objs": [
+        {"type": "chase", "kind": "sedan", "at": [3, 3], "text": "Wreck the courier's car"}
+      ],
+      "outro": ["Okoye: Good. The ledger points to a meeting at the docks."],
+      "reward": {"money": 800, "unlock": "motorcycle"}
+    },
+    {
+      "id": 9, "name": "Debts", "side": false, "req": 8, "giver": "Dante", "start": [6, 8],
+      "intro": ["Dante Rossi: Nico. We used to be friends.", "Dante: Walk away and I forget your face."],
+      "objs": [
+        {"type": "talk", "at": [6, 8], "lines": ["Dante: No? Then boys, show him the door."], "text": "Hear Dante out (USE)"},
+        {"type": "kill", "at": [6, 8], "count": 5, "text": "Survive the ambush"},
+        {"type": "escape", "level": 3, "text": "Escape the police response"}
+      ],
+      "outro": ["Marta: He is cornered. One last move, and it is at the industrial yard."],
+      "reward": {"money": 1000}
+    },
+    {
+      "id": 10, "name": "Last District", "side": false, "req": 9, "giver": "Marta", "start": [4, 6],
+      "intro": ["Marta: Dante hides in the industrial yard. End it, Nico.", "Marta: Santa Lucia is yours to save."],
+      "objs": [
+        {"type": "enter_vehicle", "kind": "offroad", "spawn": [3, 6], "text": "Take the off-road truck"},
+        {"type": "goto", "at": [8, 3], "vehicle": true, "time": 170, "text": "Drive to the industrial yard"},
+        {"type": "kill", "at": [8, 3], "count": 6, "text": "Defeat Dante's crew"},
+        {"type": "chase", "kind": "sports", "at": [8, 2], "text": "Stop Dante's getaway car"}
+      ],
+      "outro": ["Okoye: It is over. Santa Lucia owes you.", "Marta: Welcome home, Nico."],
+      "reward": {"money": 2500, "unlock": "police"}
+    },
+    {
+      "id": 101, "name": "Beach Courier", "side": true, "req": 2, "giver": "Side job", "start": [1, 8],
+      "intro": ["Beach vendor: Three parcels, three stalls. You have three minutes!"],
+      "objs": [
+        {"type": "goto", "at": [3, 8], "vehicle": false, "time": 60, "text": "Parcel 1: beach stall"},
+        {"type": "goto", "at": [5, 7], "vehicle": false, "time": 60, "text": "Parcel 2: apartment block"},
+        {"type": "goto", "at": [7, 8], "vehicle": false, "time": 60, "text": "Parcel 3: marina office"}
+      ],
+      "outro": [],
+      "reward": {"money": 300}
+    },
+    {
+      "id": 102, "name": "Street Time Trial", "side": true, "req": 3, "giver": "Side job", "start": [2, 1],
+      "intro": ["Racer: Four checkpoints. Any car. Beat the clock."],
+      "objs": [
+        {"type": "goto", "at": [6, 1], "vehicle": true, "time": 40, "text": "Checkpoint 1"},
+        {"type": "goto", "at": [6, 6], "vehicle": true, "time": 40, "text": "Checkpoint 2"},
+        {"type": "goto", "at": [2, 6], "vehicle": true, "time": 40, "text": "Checkpoint 3"},
+        {"type": "goto", "at": [2, 1], "vehicle": true, "time": 40, "text": "Finish line"}
+      ],
+      "outro": [],
+      "reward": {"money": 500}
+    },
+    {
+      "id": 103, "name": "Hit List", "side": true, "req": 5, "giver": "Side job", "start": [8, 5],
+      "intro": ["Informant: Three Kings stragglers are still on the east side."],
+      "objs": [
+        {"type": "kill", "at": [9, 5], "count": 3, "text": "Take out the stragglers"}
+      ],
+      "outro": [],
+      "reward": {"money": 450}
+    }
+  ]
+}
